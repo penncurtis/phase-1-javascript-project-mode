@@ -6,6 +6,8 @@
   
   body {
     background-image: url('https://images.newscientist.com/wp-content/uploads/2020/05/22112120/sagdig_opo0431b_web.jpg?crop=4:3,smart&width=1200&height=900&upscale=true');
+    background-position: center;
+    background-attachment: fixed;
     padding: 1rem;
     text-align: center;
     background-color: #fafafa;
@@ -60,7 +62,8 @@
   
   .name,
   .species {
-    position: absolute;
+    position:sticky;
+    text-align: center;
     left: 10px;
     padding: 0.25rem 5rem 0.25rem 1rem;
     background-color: rgba(255, 255, 255, 0.8);
@@ -114,4 +117,11 @@
     margin: 0.5rem 0;
     color: red;
     background-color: black;
+  }
+ 
+ 
+  h3,
+  #species-display,
+  #featured-movies-display {
+    color: white;
   }
