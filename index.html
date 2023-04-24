@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ramen Rater</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+  <header>
+    <h3>JEDI COUNCIL</h3>
+  </header>
+
+  <div id="Jedi-council">
+  </div>
+
+  <div id="ramen-detail">
+    <img class="detail-image" alt="Insert Name Here" />
+    <h2 class="name">Insert Jedi Name Here</h2>
+    <h3 class="birth-year">Insert Jedi Birth Year Here</h3>
+  </div>
+
+  <h3>Species:</h3>
+  <p>
+    <span id='species-display'>Insert species here</span>
+  </p>
+  <h3>Appearances</h3>
+  <p id='featured-movies-display'>
+    Insert movies here
+  </p>
+
+  <!-- New Jedi Form -->
+  <form id="new-jedi">
+    <h4>Add New Jedi</h4>
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="new-name" />
+    <label for="birth-year">Birth-year:</Birth-year> </label>
+    <input type="text" name="birth-year" id="new-birth-year" />
+    <label for="jedi-image">Image: </label>
+    <input type="text" name="image" id="new-jedi-image" />
+    <label for="species">Species: </label>
+    <input type="number" name="species" id="new-species" />
+    <label for="new-movies">Appearances: </label>
+    <textarea name="new-movies" id="new-movies"></textarea>
+    <input type="submit" value="Create" />
+  </form>
+
+</body>
+
+</html>
