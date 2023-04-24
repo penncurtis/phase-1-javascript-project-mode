@@ -13,7 +13,7 @@ const jediName = document.querySelector(".name")
 const jediDOB = document.querySelector(".birth-year")
 const jediImage = document.querySelector(".detail-image")
 const jediSpecies = document.querySelector("#species-display")
-const jediMovies = document.querySelector("#feature-movies-display")
+const jediMovies = document.querySelector("#featured-movies-display")
 
 function JediCouncilDisplay(jedis){
     jedis.forEach(jedi => {
@@ -28,7 +28,7 @@ function JediCouncilDisplay(jedis){
 
 function showcaseJedi(jedis){
     jediName.textContent = jedis.name
-    jediDOB.textContent = jedis.birthYear
+    jediDOB.textContent = jedis.yearOfBirth
     jediImage.src = jedis.image
     jediSpecies.textContent = jedis.species
     jediMovies.textContent = jedis.movies
