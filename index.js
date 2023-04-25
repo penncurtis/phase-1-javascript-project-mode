@@ -23,8 +23,20 @@ function JediCouncilDisplay(jedis){
         eachJedi.addEventListener('click', event => {
             showcaseJedi(jedi)
         })
+        eachJedi.addEventListener('mouseover', event => {
+            addGlow(event, eachJedi);
+        })
     })
 }
+
+function addGlow(event, jediImage) {
+    const colors = ['red', 'blue', 'green'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    jediImage.style.borderColor = randomColor;
+    jediImage.style.borderWidth = '5px';
+    jediImage.style.borderStyle = 'solid';
+  }
 
 function showcaseJedi(jedis){
     jediName.textContent = jedis.name
@@ -32,6 +44,10 @@ function showcaseJedi(jedis){
     jediImage.src = jedis.image
     jediSpecies.textContent = jedis.species
     jediMovies.textContent = jedis.movies
+
+    jediImage.addEventListener('mousemove', event => {
+        addGlow(event, jediImage);
+    })
 }
 
 const newJediName = document.querySelector("#new-name")
@@ -51,72 +67,6 @@ function addNewJedi(){
             species: newJediSpecies.value,
             movies: newJediMovies.value,
         }
-        showcaseJedi(newJedi)
+        JediCouncilDisplay([newJedi])
     })
 }
-
-
-// document.addEventListener('keydown', function(event) {
-//     if(event === 'Space') {
-//   if(event === ‘Anakin Skywalker’){
-//   Return document.body.style.backgroundColor = 'red';
-//   } 
-//   else if (event === ‘Yoda’) {
-//       Return document.body.style.backgroundColor = 'green';
-//   } 
-//   else if (event === ‘Mace Windu’){
-//       Return document.body.style.backgroundColor = ‘purple';
-//       }
-//   else if (event === ‘Coleman Kcaj’){
-//       Return document.body.style.backgroundColor = ‘green';
-//       }
-//   else if (event === ‘Saesse Tiin’){
-//       Return document.body.style.backgroundColor = ‘green';
-//       }
-//   else if (event === ‘Oppo Rancisis’){
-//       Return document.body.style.backgroundColor = ‘green';
-//       }
-//   else if (event === ‘Kit Fisto’){
-//       Return document.body.style.backgroundColor = ‘green';
-//       }
-//   else if (event === ‘Luminara Unduli’){
-//       Return document.body.style.backgroundColor = ‘green';
-//       }
-//   else if{
-//       Return document.body.style.backgroundColor = 'blue';
-//       }
-//     }
-//   });
-  
-
-document.addEventListener('keydown', function(event) {
-    if(event.code === 'Space') {
-      if(event.code === 'KeyA'){
-        document.body.style.backgroundColor = 'red';
-      } 
-      else if(event.code === 'KeyY') {
-        document.body.style.backgroundColor = 'green';
-      }
-      else if(event.code === 'KeyM'){
-        document.body.style.backgroundColor = 'purple';
-      }
-      else if(event.code === 'KeyC'){
-        document.body.style.backgroundColor = 'green';
-      }
-      else if(event.code === 'KeyS'){
-        document.body.style.backgroundColor = 'green';
-      }
-      else if(event.code === 'KeyO'){
-        document.body.style.backgroundColor = 'green';
-      }
-      else if(event.code === 'KeyK'){
-        document.body.style.backgroundColor = 'green';
-      }
-      else if(event.code === 'KeyL'){
-        document.body.style.backgroundColor = 'green';
-      }
-      else {
-        document.body.style.backgroundColor = 'blue';
-      }
-    }
-  });
