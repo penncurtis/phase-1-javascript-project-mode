@@ -46,6 +46,19 @@ function addGlow(event, jediImage) {
   }, 1000);
   }
 
+// same function as above is just makes it so that the border of the main Jedi doesn't fade
+
+function addGlowToMainJedi(event, jediImage) {
+    const colors = ['red', 'blue', 'green'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    jediImage.style.borderColor = randomColor;
+    jediImage.style.borderWidth = '5px';
+    jediImage.style.borderStyle = 'solid';
+    jediImage.style.transition = 'border-color 0.5s, border-width 0.5s';
+    }
+
+
 function showcaseJedi(jedis){
     jediName.textContent = jedis.name
     jediDOB.textContent = jedis.yearOfBirth
@@ -54,7 +67,7 @@ function showcaseJedi(jedis){
     jediMovies.textContent = jedis.movies
 
     jediImage.addEventListener('mousemove', event => {
-        addGlow(event, jediImage);
+        addGlowToMainJedi(event, jediImage);
     })
 }
 
