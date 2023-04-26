@@ -36,6 +36,14 @@ function addGlow(event, jediImage) {
     jediImage.style.borderColor = randomColor;
     jediImage.style.borderWidth = '5px';
     jediImage.style.borderStyle = 'solid';
+    jediImage.style.transition = 'border-color 0.5s, border-width 0.5s';
+
+  setTimeout(() => {
+    jediImage.style.borderColor = '';
+    jediImage.style.borderWidth = '';
+    jediImage.style.borderStyle = '';
+    jediImage.style.transition = '';
+  }, 1000);
   }
 
 function showcaseJedi(jedis){
@@ -70,3 +78,4 @@ function addNewJedi(){
         JediCouncilDisplay([newJedi])
     })
 }
+
