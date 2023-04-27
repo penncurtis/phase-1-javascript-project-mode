@@ -83,7 +83,7 @@ function addNewJedi(){
         event.preventDefault()
         const newJedi = {
             name: newJediName.value,
-            birthYear: newJediDOB.value,
+            yearOfBirth: newJediDOB.value,
             image: newJediImage.value,
             species: newJediSpecies.value,
             movies: newJediMovies.value,
